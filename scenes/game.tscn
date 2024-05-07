@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddbmhw5s61pmu"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_1cb3n"]
+[ext_resource type="PackedScene" uid="uid://ba8bwh4irmg38" path="res://scenes/level_generator.tscn" id="3_3wdw3"]
+[ext_resource type="Texture2D" uid="uid://d0ldq5aocts5i" path="res://assets/-apebackground.jpg" id="3_4mntx"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_1cb3n")
+
+[node name="LevelGenerator" parent="." instance=ExtResource("3_3wdw3")]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.25, 0.25)
+motion_mirroring = Vector2(0, 950)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+visible = false
+scale = Vector2(0.499074, 0.499479)
+texture = ExtResource("3_4mntx")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(0, 950)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+visible = false
+scale = Vector2(0.50463, 0.500521)
+texture = ExtResource("3_4mntx")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 950)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+scale = Vector2(0.501852, 0.500521)
+texture = ExtResource("3_4mntx")
+centered = false
